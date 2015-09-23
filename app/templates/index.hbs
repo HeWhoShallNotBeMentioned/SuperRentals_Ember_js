@@ -1,22 +1,32 @@
-<h1> Welcome to Super Rentals </h1>
+<div class="container">
 
-We hope you find exactly what you're looking for in a place to stay.
+  <h1> Welcome to Super Rentals </h1>
 
-<ul>
-  {{#each model.rentals as |rental|}}
-  {{rental-tile rental=rental update="update" destroyRental="destroyRental"}}
-  {{/each}}
-</ul>
+  We hope you find exactly what you're looking for in a place to stay.
 
-{{new-rental save2="save3"}}
+  <h2>Available Rentals</h2>
 
-<ul>
-  {{#each model.cities as |city|}}
-  {{city-tile city=city destroyCity="destroyCity"}}
-  {{/each}}
-</ul>
+  <ul>
+    {{#each model.rentals as |rental|}}
+      {{rental-tile rental=rental update="update" destroyRental="destroyRental"}}
+    {{/each}}
+  </ul>
 
-{{new-city citySave2="citySave3"}}
+  {{new-rental save2="save3"}}
 
-{{#link-to 'about'}}About{{/link-to}}
-{{#link-to 'contact'}}Click here to contact us.{{/link-to}}
+  <h2>Cities</h2>
+
+  <ul>
+    {{#each model.cities as |city|}}
+    <li>{{#link-to 'city' city.id}}{{city.name}}{{/link-to}}</li>
+    {{/each}}
+  </ul>
+
+  {{new-city citySave2="citySave3"}}
+
+  <hr>
+
+  {{#link-to 'about'}}About{{/link-to}}
+  {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
+
+</div>

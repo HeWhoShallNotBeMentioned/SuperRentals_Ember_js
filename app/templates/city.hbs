@@ -1,1 +1,5 @@
-{{outlet}}
+<h1> Welcome to {{model.city.name}} </h1>
+
+{{city-tile city=model.city rentals=model.city.rentals saveRental="saveRental" destroyCity="destroyCity"}}
+
+{{new-rental city=model.city saveRental="saveRental"}}

@@ -7,13 +7,13 @@ export default Ember.Component.extend({
       this.set('addNewCity', true);
     },
 
-    save1() {
+    citySave1() {
       var params = {
-        description: this.get('description'),
-        attraction: this.get('attraction')
+        name: this.get('name'),
+        attractions: this.get('attractions')
       };
       this.set('addNewCity', false),
-      this.sendAction('save2', params);
+      this.sendAction('citySave2', params);
     },
   delete(city) {
     if (confirm('Are you sure you want to delete this city?')) {

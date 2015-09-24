@@ -9,7 +9,7 @@ export default Ember.Component.extend({
     citySave1() {
       var params = {
         name: this.get('name'),
-        attraction: this.get('attraction')
+        attractions: this.get('attractions')
       };
       this.set('addNewCity', false),
       this.sendAction('citySave2', params);
